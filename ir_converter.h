@@ -21,8 +21,8 @@ public:
     ir_converter();
 
     /**
-     * Converts a higher level AST
-     * to IR
+     * Converts a typechecked high level AST
+     * to a lower level representation
      * @param ast AST (abstract syntax tree)
      */
      bool convert(std::vector<std::string> ast);

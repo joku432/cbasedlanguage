@@ -16,7 +16,7 @@ public:
 };
 
 ir_converter::ir_converter() {
-    pImpl = std::make_unique();
+    pImpl = std::make_unique<impl>();
 }
 
 bool ir_converter::convert(std::vector<std::string> ast) {
