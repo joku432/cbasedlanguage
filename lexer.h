@@ -9,17 +9,23 @@
 class Lexer {
 private:
     char mCurrentChar;
+    int mCurPos;
     Location mCurLocation;
     std::ifstream mFile;
 
 public:
     Lexer();
-    std::vector<std::unique_ptr<Token>> make_tokens(const std::string& file);
+    std::vector<std::unique_ptr<Token>> tokenize(const std::string& file);
 
 private:
-    inline void nextChar() {
+    std::unique_ptr<Token> make_ident();
+    std::unique_ptr<Token> make_number();
+    std::unique_ptr<Token> make_other();
+    void nextChar() {
+        if (mFile.)
         mCurLocation.col++;
     }
+
 
     inline void peek() {
 

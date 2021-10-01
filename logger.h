@@ -4,7 +4,7 @@
 #include "location.h"
 
 enum class error_type {
-    PARSE_ERROR,
+    SYNTAX_ERROR,
     LOGIC_ERROR
 };
 
@@ -43,8 +43,8 @@ private:
     static inline std::vector<logger_message<warning_type>> warnings; 
 
 public:
-    static void error() {}
-    static void warning() {}
+    static void error(error_type err_type, const std::string& message, Location loc, bool critical = false) {}
+    static void warning(const std::string& message) {}
     static void output_logs() {}
 private:
 

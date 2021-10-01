@@ -5,6 +5,16 @@
 #include "location.h"
 
 enum class TokenType {
+    FUNCTION,
+    VAR,
+    CONST,
+    IF,
+    ELIF,
+    ELSE,
+    FOR,
+    WHILE,
+    CLASS,
+
     IDENT,
     STRING,
     NUMBER,
@@ -23,6 +33,9 @@ struct Token {
     : mLocation(location),
     mTokenType(tokenType),
     mValue(value) {}
+
+    Token(const Location& location, TokenType tokenType)
+        : mLocation(location), mTokenType(tokenType), mValue("") {}
 
     bool operator==(TokenType otherTokenType) {
         return otherTokenType == mTokenType;

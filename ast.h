@@ -10,7 +10,7 @@ namespace ast {
     class ast_node : public visitable {
     public:
         ast_node();
-        void accept(const ast_visitor& v) = 0;
+        virtual void accept(const ast_visitor& v) = 0;
     };
 }
 }
