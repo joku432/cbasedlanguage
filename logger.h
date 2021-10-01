@@ -41,11 +41,13 @@ class logger {
 private:
     static inline std::vector<logger_message<error_type>> errors;
     static inline std::vector<logger_message<warning_type>> warnings; 
-public:
-    static void error() {
 
-    }
-    static void warning(); 
+public:
+    static void error() {}
+    static void warning() {}
+    static void output_logs() {}
+private:
+
 };
 
 

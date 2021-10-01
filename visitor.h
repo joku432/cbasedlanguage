@@ -21,13 +21,34 @@ class visitor {
     }
 };
 
-class ast_visitor : public visitor {
+namespace ast {
+    class ast_node;
+    class expr;
+    class number;
+    class ident_expr;
+    class function_call;
+    class stmt;
+    class function_def;
 
-};
+    class ast_visitor : public visitor {
+        virtual void visit(const ast_node &n) = 0;
+        virtual void visit(const expr &n) = 0;
+        virtual void visit(const number &n) = 0;
+        virtual void visit(const ident_expr &n) = 0;
+        virtual void visit(const function_call &n) = 0;
+        virtual void visit(const stmt &n) = 0;
+        virtual void visit(const function_def &n) = 0;
+    };
 
-class bytecode_visitor : public visitor {
+}
 
-};
+namespace ir {
+
+    class bytecode_visitor : public visitor {
+
+    };
+
+}
 
 }
 
